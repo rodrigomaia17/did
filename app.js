@@ -1,6 +1,8 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+
+const app = express();
 
 app.use('/', express.static('public'));
 
-app.listen(3000, function() { console.log('listening...') });
+// eslint-disable-next-line no-console
+app.listen(3000, () => { console.log('listening...'); });
