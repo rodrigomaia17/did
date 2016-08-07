@@ -1,18 +1,8 @@
-import React from 'react'
+import React,  { Component }   from 'react';
 import ReactDOM from 'react-dom';
-
-// tutorial1.js
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
-    );
-  }
-});
+import { TaskList }  from 'components'
 
 ReactDOM.render(
-  <CommentBox />,
+  <TaskList />,
   document.getElementById('content')
 );
