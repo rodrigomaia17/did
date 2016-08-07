@@ -7,7 +7,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 var taskList =  [ 
     { id:1, done: false , text: "task 1", list: "today"},
-    { id:2, done: false , text: "task 2", list: "backlog"} 
+    { id:2, done: true , text: "task 2", list: "today"} ,
+    { id:3, done: false , text: "task 2", list: "backlog"} ,
+    { id:4, done: false , text: "task 2", list: "today"} ,
+    { id:5, done: false , text: "task 2", list: "backlog"} 
   ];
 
 const App = () => (

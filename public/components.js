@@ -22,7 +22,8 @@ export class TaskWidget extends Component {
     })
 
     var divStyle = {
-      width: '100%'
+      width: '100%',
+      maxWidth: '100%'
     }
 
     return (
@@ -64,7 +65,7 @@ export class TaskList extends Component {
 
 export class Task extends Component {
   render() {
-    return (<ListItem primaryText={this.props.task.text} leftCheckbox={<Checkbox />} />)
+    return (<ListItem primaryText={this.props.task.text} leftCheckbox={<Checkbox checked={this.props.task.done} />} />)
   }
 
 }
