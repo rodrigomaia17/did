@@ -1,4 +1,17 @@
 extends: airbnb
 installedESLint: true
+env:
+  browser: true
 plugins:
   - react
+import/resolver:
+  jspm: { moduleDirectory: public/jspm_packages }
+  node: true
+rules:
+  no-useless-constructor: off
+  import/no-extraneous-dependencies: off
+  import/no-unresolved: off
+  react/prop-types: off
+  react/prefer-stateless-function: off
+  react/no-multi-comp: off
+

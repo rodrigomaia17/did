@@ -1,33 +1,27 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
-import {List, ListItem} from 'material-ui/List';
+import { List, ListItem } from 'material-ui/List';
 import Checkbox from 'material-ui/Checkbox';
 import Subheader from 'material-ui/Subheader';
 
 export class TaskWidget extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
-
   render() {
+    const today = this.props.tasks.filter(t => t.list === 'today');
 
-    var today = this.props.tasks.filter(t => {
-      return t.list === 'today';
-    })
+    const backlog = this.props.tasks.filter(t => t.list === 'backlog');
 
-    var backlog  = this.props.tasks.filter(t => {
-      return t.list === 'backlog';
-    })
-
-    var divStyle = {
+    const divStyle = {
       width: '100%',
-      maxWidth: '100%'
-    }
+      maxWidth: '100%',
+    };
 
     return (
-        <div className="container" style={divStyle} >
+      <div className="container" style={divStyle} >
         <div className="row">
           <div className="col-6">
             <TaskList text="Hoje" tasks={today} />
@@ -36,36 +30,36 @@ export class TaskWidget extends Component {
             <TaskList text="Backlog" tasks={backlog} />
           </div>
         </div>
-        </div>
-        )
+      </div>
+        );
   }
 }
 
 export class TaskList extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
 
   render() {
-    var tasks = [];
+    let tasks = [];
     this.props.tasks.forEach(t => {
       tasks.push(<Task key={t.id} task={t} />);
     });
 
-    return  (
-        <Paper> 
+    return (
+      <Paper>
         <Subheader> {this.props.text} </Subheader>
         <List> {tasks} </List>
-        </Paper>
+      </Paper>
         );
   }
 }
 
 export class Task extends Component {
   render() {
-    return (<ListItem primaryText={this.props.task.text} leftCheckbox={<Checkbox checked={this.props.task.done} />} />)
+    let check = (<Checkbox checked={this.props.task.done} />);
+    return (<ListItem primaryText={this.props.task.text} leftCheckbox={check} />);
   }
-
 }
