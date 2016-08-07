@@ -4,8 +4,10 @@
       "baseURL": "public"
     },
     "dependencies": {
+      "material-ui": "npm:material-ui@^0.15.3",
       "react": "npm:react@^15.3.0",
-      "react-dom": "npm:react-dom@^15.3.0"
+      "react-dom": "npm:react-dom@^15.3.0",
+      "react-tap-event-plugin": "npm:react-tap-event-plugin@^1.0.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

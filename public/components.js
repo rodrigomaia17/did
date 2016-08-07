@@ -1,4 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import Paper from 'material-ui/Paper';
+import {List, ListItem} from 'material-ui/List';
+import Checkbox from 'material-ui/Checkbox';
+import Subheader from 'material-ui/Subheader';
 
 export class TaskWidget extends Component {
 
@@ -17,12 +21,22 @@ export class TaskWidget extends Component {
       return t.list === 'backlog';
     })
 
+    var divStyle = {
+      width: '100%'
+    }
+
     return (
-        <div>
-        <TaskList text="Hoje" tasks={today} />
-        <TaskList text="Backlog" tasks={backlog} />
+        <div className="container" style={divStyle} >
+        <div className="row">
+          <div className="col-6">
+            <TaskList text="Hoje" tasks={today} />
+          </div>
+          <div className="col-6">
+            <TaskList text="Backlog" tasks={backlog} />
+          </div>
         </div>
-    )
+        </div>
+        )
   }
 }
 
@@ -40,17 +54,17 @@ export class TaskList extends Component {
     });
 
     return  (
-        <div> 
-          {this.props.text} 
-          <ul> {tasks} </ul>
-        </div>
+        <Paper> 
+        <Subheader> {this.props.text} </Subheader>
+        <List> {tasks} </List>
+        </Paper>
         );
   }
 }
 
 export class Task extends Component {
   render() {
-    return (<li>{this.props.task.text}</li>)
+    return (<ListItem primaryText={this.props.task.text} leftCheckbox={<Checkbox />} />)
   }
 
 }
