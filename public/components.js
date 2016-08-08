@@ -3,6 +3,9 @@ import Paper from 'material-ui/Paper';
 import { List, ListItem } from 'material-ui/List';
 import Checkbox from 'material-ui/Checkbox';
 import Subheader from 'material-ui/Subheader';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
 
 export class TaskWidget extends Component {
 
@@ -50,6 +53,9 @@ export class TaskList extends Component {
 
     return (
       <Paper>
+        <FloatingActionButton className="rightButton" >
+          <ContentAdd />
+        </FloatingActionButton>
         <Subheader> {this.props.text} </Subheader>
         <List> {tasks} </List>
       </Paper>
