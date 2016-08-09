@@ -2,6 +2,7 @@ extends: airbnb
 installedESLint: true
 env:
   browser: true
+  jasmine: true
 plugins:
   - react
 import/resolver:

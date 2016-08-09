@@ -31,6 +31,7 @@
   "scripts": {
     "lint": "eslint . public/*.jsx lib test",
     "unit-test": "NODE_ENV=test mocha",
+    "watch-test": "watch 'npm run unit-test' lib public test",
     "test": "npm run unit-test && npm run lint"
   }
 }
