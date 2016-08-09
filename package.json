@@ -29,7 +29,8 @@
     "express": "^4.14.0"
   },
   "scripts": {
-    "lint": "eslint . public/*.jsx",
-    "test": "NODE_ENV=test mocha"
+    "lint": "eslint . public/*.jsx lib test",
+    "unit-test": "NODE_ENV=test mocha",
+    "test": "npm run unit-test && npm run lint"
   }
 }
