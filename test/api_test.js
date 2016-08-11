@@ -1,13 +1,19 @@
 const request = require('supertest');
-const api = require('../lib/api');
 const fs = require('fs');
 
 const testData = { tasks: [{ description: 'task1' }] };
 
+let api = {};
+
 describe('api tests', () => {
   before((done) => {
     const fileName = 'test.json';
-    fs.writeFile(fileName, JSON.stringify(testData), () => { done(); });
+    fs.writeFile(fileName, JSON.stringify(testData), () => {
+// eslint-disable-next-line global-require
+      api = require('../lib/api');
+
+      done();
+    });
   });
 
   it('GET tasks', (done) => {
