@@ -53,7 +53,7 @@ export class TaskList extends Component {
 
     return (
       <Paper>
-        <FloatingActionButton className="rightButton" >
+        <FloatingActionButton mini="true" className="rightButton" >
           <ContentAdd />
         </FloatingActionButton>
         <Subheader> {this.props.text} </Subheader>

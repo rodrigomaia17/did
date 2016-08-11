@@ -1,3 +1,5 @@
 node_modules
 public/jspm_packages
+test.json
+db.json
 npm-debug.log.*
